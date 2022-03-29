@@ -54,17 +54,25 @@ public class RandomCharacterTest {
     void CheckPrimeNum(){
         Boolean flag = true;
         int number = (r.nextInt(2000000));
+        String output = "";
         //if number <=1 means it's not a prime number
         System.out.println("check is prime number");
         if(number <= 1){
             flag = false;
+
         }
         for (int i = 2; i<= number/2; i++) {
             if ((number % i) == 0) {
                 flag = false;
+
             }
         }
-        System.out.println("number: "+number);
+        if(flag == false){
+            output = number+" is not a prime number";
+        }else {
+            output = number+" is a prime number";
+        }
+        System.out.println(output);
         assertTrue(flag);
     }
 
